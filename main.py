@@ -61,6 +61,7 @@ def start_game():
     with mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.4, max_num_hands=1) as hands:
         while True:
             ret, frame = capture.read()
+            frame = cv2.flip(frame, 1)
             if not ret:
                 break
 
