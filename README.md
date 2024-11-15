@@ -38,7 +38,7 @@ This application captures video from the webcam and uses MediaPipe's hand landma
 Functions Explained:
 --------------------
 
-1. ```python get_finger_status(hand_landmarks, finger_name)```
+1. ```get_finger_status(hand_landmarks, finger_name)```
    - Purpose: Determines if a specific finger (index, middle, ring, pinky) is extended.
    - Parameters:
      - hand_landmarks: The detected hand landmarks from MediaPipe.
@@ -46,28 +46,28 @@ Functions Explained:
    - Returns: True if the finger is extended, False otherwise.
    - Explanation: Compares the y-coordinates of the finger's tip and MCP joint to detect extension.
 
-2. ```python get_thumb_status(hand_landmarks)```
+2. ```get_thumb_status(hand_landmarks)```
    - Purpose: Checks if the thumb is extended.
    - Parameters:
      - hand_landmarks: The detected hand landmarks from MediaPipe.
    - Returns: True if the thumb is extended, False otherwise.
    - Explanation: Uses x-coordinates to detect if the thumb tip is extended.
 
-3. ```python detect_move(hand_landmarks)```
+3. ```detect_move(hand_landmarks)```
    - Purpose: Detects the player's move (Rock, Paper, or Scissors) based on hand landmarks.
    - Parameters:
      - hand_landmarks: The detected hand landmarks from MediaPipe.
    - Returns: A string indicating the player's move (Rock, Paper, Scissors, or UNKNOWN).
    - Explanation: Combines thumb and finger statuses into a gesture pattern to interpret the move.
 
-4. ```python calculate_game_result(player_move)```
+4. ```calculate_game_result(player_move)```
    - Purpose: Determines the result of the game.
    - Parameters:
      - player_move: The move made by the player (Rock, Paper, or Scissors).
    - Returns: A tuple with the result (1 for win, -1 for loss, 0 for draw) and the computer's move.
    - Explanation: Randomly selects a move for the computer and compares it with the player's move to determine the result.
 
-5. ```python start_game()```
+5. ```start_game()```
    - Purpose: Main function that initializes the webcam and runs the game loop.
    - Explanation: Captures video, detects hand landmarks, interprets moves, and displays game results. Manages game states like the timer and handles keypresses to start or end the game.
 
