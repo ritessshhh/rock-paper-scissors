@@ -25,7 +25,6 @@ def get_thumb_status(hand_landmarks):
 def detect_move(hand_landmarks):
     """Detect the player's move based on hand landmarks."""
     states = [
-        "1" if get_thumb_status(hand_landmarks) else "0",
         "1" if get_finger_status(hand_landmarks, 'INDEX') else "0",
         "1" if get_finger_status(hand_landmarks, 'MIDDLE') else "0",
         "1" if get_finger_status(hand_landmarks, 'RING') else "0",
@@ -33,9 +32,9 @@ def detect_move(hand_landmarks):
     ]
     gesture = "".join(states)
     return {
-        "00000": "Rock",
-        "11111": "Paper",
-        "01100": "Scissors"
+        "0000": "Rock",
+        "1111": "Paper",
+        "1100": "Scissors"
     }.get(gesture, "UNKNOWN")
 
 def calculate_game_result(player_move):
