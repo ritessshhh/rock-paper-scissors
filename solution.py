@@ -6,7 +6,7 @@ def start_game():
     ## IMPORT HAND AND DRAWING UTILS AND TURN ON WEBCAM
     mp_drawing = mp.solutions.drawing_utils
     mp_hands = mp.solutions.hands
-    capture = cv2.VideoCapture(1)
+    capture = cv2.VideoCapture(0)
 
     # GAME STATE VARIABLES
     timer_started, hold_for_play = False, False
